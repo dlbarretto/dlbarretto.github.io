@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Site</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: url('backgrounddangit') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+    .content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding-top: 20vh;
+    }
+    /* Optional: overlay for better text visibility */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 1;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>Welcome to My Site!</h1>
+    <p>Your background image is set to "backgrounddangit".</p>
+  </div>
+</body>
+</html>
