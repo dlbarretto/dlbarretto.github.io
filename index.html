@@ -29,46 +29,42 @@
       border-radius: .25rem;
       white-space: nowrap;
       transition: background-color .15s ease, color .15s ease;
-      margin: 0 .35rem;                
+      margin: 0 .35rem;                 
     }
     .navbar .nav-link:hover,
     .navbar .nav-link:focus {
-      background-color: #8a2be2;       
+      background-color: #8a2be2;        
       color: #fff !important;
     }
-
     .nav-scroller { overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .nav-scroller .navbar-nav { flex-wrap: nowrap; gap: .25rem; }
-
     @media (min-width: 768px) {
-      .nav-scroller .navbar-nav { gap: .75rem; }
-      .navbar .nav-link { margin: 0 .5rem; }
+      .nav-scroller .navbar-nav { gap: .9rem; }  
+      .navbar .nav-link { margin: 0 .55rem; }
     }
 
+    
     .settings-btn { border: none !important; outline: none; }
     .settings-btn .navbar-toggler-icon { filter: invert(1); }
- 
+
     .banner-wrap { width: 100%; background: #000; }
     .banner-img {
-      width: 100%;
-      height: 200px;                   
-      object-fit: contain;             
-      object-position: center;
       display: block;
-      background-color: #000;         
-    }
-    @media (max-width: 576px) {
-      .banner-img { height: 180px; }   
+      width: 100%;       
+      height: auto;       
+      max-height: 45vh;   
+      object-fit: contain;
+      object-position: center;
+      background-color: #000; 
     }
 
-    .content-area { background-color: #1f1f1f; height: calc(100vh - 56px - 200px); }
-    @media (max-width: 576px) {
-      .content-area { height: calc(100vh - 56px - 180px); }
-    }
+   
+    .content-area { background-color: #1f1f1f; height: calc(100vh - 56px - min(45vh, 100vh)); }
   </style>
 </head>
 <body>
 
+ 
   <nav class="navbar navbar-dark py-2">
     <div class="container-fluid px-3">
       <div class="nav-scroller flex-grow-1">
@@ -79,13 +75,13 @@
           <li class="nav-item"><a class="nav-link" href="javascript:void(0)">Whisper</a></li>
         </ul>
       </div>
-
       <button class="navbar-toggler settings-btn ms-2" type="button" aria-label="Settings">
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
   </nav>
 
+  
   <div class="banner-wrap">
     <img class="banner-img" alt="Landscape"
       src="https://raw.githubusercontent.com/dlbarretto/dlbarretto.github.io/597deb98e4572621af1bdc212c97d189a964f877/visuals/Landscape.jpg">
