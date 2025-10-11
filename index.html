@@ -299,10 +299,26 @@
     }
     
     .top-blank { 
-      background-color: #fff; 
+      background-image: url("C:\\Users\\USER\\Downloads\\Portfolio\\pixelbg.gif");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       flex: 0.8; 
       min-height: 200px;
+      position: relative;
     }
+    
+    .top-blank::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(to bottom, transparent, #1f1f1f);
+      pointer-events: none;
+    }
+    
     .content-area { 
       background-color: #1f1f1f; 
       flex: 1.2; 
@@ -316,7 +332,17 @@
     .bg-tv-sm { flex: 1.2 !important; min-height: 400px !important; }
     .bg-tv-lg { flex: 0.8 !important; min-height: 500px !important; }
 
-    body.light-theme .top-blank { background-color: #1f1f1f; }
+    body.light-theme .top-blank { 
+      background-image: url("C:\\Users\\USER\\Downloads\\Portfolio\\pixelbg.gif");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    body.light-theme .top-blank::after {
+      background: linear-gradient(to bottom, transparent, #fff);
+    }
+    
     body.light-theme .content-area { background-color: #fff; }
   </style>
 </head>
