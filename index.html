@@ -299,7 +299,7 @@
     }
     
     .top-blank { 
-      background-image: url("visuals/pixelbg.gif");
+      background-image: url("C:\\Users\\USER\\Downloads\\Portfolio\\pixelbg.gif");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -333,7 +333,7 @@
     .bg-tv-lg { flex: 0.8 !important; min-height: 500px !important; }
 
     body.light-theme .top-blank { 
-      background-image: url("visuals/pixelbg.gif");
+      background-image: url("C:\\Users\\USER\\Downloads\\Portfolio\\pixelbg.gif");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -344,6 +344,72 @@
     }
     
     body.light-theme .content-area { background-color: #fff; }
+
+    .background-picker {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      margin-top: 0.5rem;
+    }
+    
+    .bg-number {
+      width: 24px;
+      height: 24px;
+      border: 1px solid #6c757d;
+      border-radius: 4px;
+      background-color: #374151;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    
+    .bg-number:hover {
+      background-color: #4B5563;
+      border-color: #9CA3AF;
+    }
+    
+    .bg-number.active {
+      background-color: #4d20c9;
+      border-color: #4d20c9;
+    }
+    
+    body.light-theme .bg-number {
+      background-color: #f3f4f6;
+      color: #000;
+      border-color: #d1d5db;
+    }
+    
+    body.light-theme .bg-number:hover {
+      background-color: #e5e7eb;
+      border-color: #9ca3af;
+    }
+    
+    body.light-theme .bg-number.active {
+      background-color: #4d20c9;
+      color: #fff;
+      border-color: #4d20c9;
+    }
+
+    .bg-1 { background-image: url("C:\\Users\\USER\\Downloads\\Portfolio\\pixelbg.gif") !important; }
+    .bg-2 { background-image: url("C:\\Users\\USER\\Downloads\\Portfolio\\background2.gif") !important; }
+    .bg-3 { background-image: url("C:\\Users\\USER\\Downloads\\Portfolio\\background3.gif") !important; }
+    .bg-4 { background-image: url("C:\\Users\\USER\\Downloads\\Portfolio\\background4.gif") !important; }
+    .bg-5 { background-image: url("C:\\Users\\USER\\Downloads\\Portfolio\\background5.gif") !important; }
+    .bg-6 { background-image: url("C:\\Users\\USER\\Downloads\\Portfolio\\background6.gif") !important; }
+    .bg-7 { background-image: url("C:\\Users\\USER\\Downloads\\Portfolio\\background7.gif") !important; }
+    .bg-8 { background-image: url("C:\\Users\\USER\\Downloads\\Portfolio\\background8.gif") !important; }
+    .bg-9 { background-image: url("C:\\Users\\USER\\Downloads\\Portfolio\\background9.gif") !important; }
+    .bg-10 { background-image: url("C:\\Users\\USER\\Downloads\\Portfolio\\background10.gif") !important; }
+    .bg-11 { background-image: url("C:\\Users\\USER\\Downloads\\Portfolio\\background11.gif") !important; }
+    .bg-12 { background-image: url("C:\\Users\\USER\\Downloads\\Portfolio\\background12.gif") !important; }
+    .bg-13 { background-image: url("C:\\Users\\USER\\Downloads\\Portfolio\\background13.gif") !important; }
+    .bg-14 { background-image: url("C:\\Users\\USER\\Downloads\\Portfolio\\background14.gif") !important; }
+    .bg-15 { background-image: url("C:\\Users\\USER\\Downloads\\Portfolio\\background15.gif") !important; }
   </style>
 </head>
 <body>
@@ -380,6 +446,26 @@
             <div class="dropdown-row">
               <span class="dropdown-item-simple">Background</span>
             </div>
+            
+            <div class="dropdown-row">
+              <div class="background-picker">
+                <div class="bg-number active" data-bs-toggle="button" data-bg="1">1</div>
+                <div class="bg-number" data-bs-toggle="button" data-bg="2">2</div>
+                <div class="bg-number" data-bs-toggle="button" data-bg="3">3</div>
+                <div class="bg-number" data-bs-toggle="button" data-bg="4">4</div>
+                <div class="bg-number" data-bs-toggle="button" data-bg="5">5</div>
+                <div class="bg-number" data-bs-toggle="button" data-bg="6">6</div>
+                <div class="bg-number" data-bs-toggle="button" data-bg="7">7</div>
+                <div class="bg-number" data-bs-toggle="button" data-bg="8">8</div>
+                <div class="bg-number" data-bs-toggle="button" data-bg="9">9</div>
+                <div class="bg-number" data-bs-toggle="button" data-bg="10">10</div>
+                <div class="bg-number" data-bs-toggle="button" data-bg="11">11</div>
+                <div class="bg-number" data-bs-toggle="button" data-bg="12">12</div>
+                <div class="bg-number" data-bs-toggle="button" data-bg="13">13</div>
+                <div class="bg-number" data-bs-toggle="button" data-bg="14">14</div>
+                <div class="bg-number" data-bs-toggle="button" data-bg="15">15</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -387,7 +473,7 @@
   </nav>
 
   <main>
-    <section class="top-blank bg-mobile-sm bg-desktop-sm bg-tv-sm"></section>
+    <section class="top-blank bg-1 bg-mobile-sm bg-desktop-sm bg-tv-sm"></section>
     <section class="content-area bg-mobile-lg bg-desktop-lg bg-tv-lg"></section>
   </main>
 
@@ -419,6 +505,27 @@
       } else {
         console.log('Sounds disabled');
       }
+    });
+
+    const backgroundNumbers = document.querySelectorAll('.bg-number');
+    const topBlank = document.querySelector('.top-blank');
+    
+    backgroundNumbers.forEach(number => {
+      number.addEventListener('click', function(e) {
+        e.stopPropagation();
+        
+        backgroundNumbers.forEach(n => n.classList.remove('active'));
+        
+        this.classList.add('active');
+        
+        const bgNumber = this.getAttribute('data-bg');
+        
+        topBlank.className = topBlank.className.replace(/bg-\d+/g, '');
+        
+        topBlank.classList.add(`bg-${bgNumber}`);
+        
+        console.log(`Background changed to: ${bgNumber}`);
+      });
     });
 
     function updateResponsiveClasses() {
@@ -489,4 +596,3 @@
   </script>
 </body>
 </html>
-
