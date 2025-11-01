@@ -1,0 +1,206 @@
+/* Portfolio Activities Content Styles */
+.activities-container {
+width: 100%;
+min-height: calc(100vh - 80px);
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 2rem 1rem;
+gap: 2rem;
+flex-wrap: wrap;
+}
+.portfolio-card {
+width: 300px;
+height: 400px;
+background-color: #fff;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+display: flex;
+flex-direction: column;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+position: relative;
+}
+.portfolio-card:hover {
+transform: translateY(-8px);
+box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.portfolio-card-image {
+width: 100%;
+height: 60%;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 1.5rem;
+font-weight: 700;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+.portfolio-card-content {
+padding: 1.5rem;
+flex: 1;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+.portfolio-card-title {
+font-family: 'Roboto', sans-serif;
+font-size: 1.25rem;
+font-weight: 700;
+color: #25283B;
+margin-bottom: 0.75rem;
+}
+.portfolio-card-text {
+font-family: 'Roboto', sans-serif;
+font-size: 0.95rem;
+color: #666;
+line-height: 1.6;
+margin-bottom: 1rem;
+}
+.portfolio-card-button {
+background-color: #553C9A;
+color: white;
+border: none;
+padding: 0.6rem 2rem;
+border-radius: 0.5rem;
+font-family: 'Roboto', sans-serif;
+font-size: 0.95rem;
+font-weight: 600;
+cursor: pointer;
+transition: background-color 0.3s ease, transform 0.2s ease;
+display: block;
+text-align: center;
+text-decoration: none;
+width: fit-content;
+}
+.portfolio-card-button:hover {
+background-color: #4d20c9;
+transform: translateY(-2px);
+}
+.portfolio-card-button:active {
+transform: translateY(0);
+}
+.portfolio-card-button-details {
+background-color: white;
+color: #000;
+border: 1px solid #000;
+padding: 0.6rem 2rem;
+border-radius: 0.5rem;
+font-family: 'Roboto', sans-serif;
+font-size: 0.95rem;
+font-weight: 600;
+cursor: pointer;
+transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+}
+.portfolio-card-button-details:hover {
+background-color: #f8f9fa;
+color: #000;
+transform: translateY(-2px);
+}
+.portfolio-card-button-details:active {
+transform: translateY(0);
+}
+body.light-theme .portfolio-card {
+background-color: #f8f9fa;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+body.light-theme .portfolio-card:hover {
+box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15), 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+body.light-theme .portfolio-card-title {
+color: #000;
+}
+body.light-theme .portfolio-card-text {
+color: #555;
+}
+@media (max-width: 768px) {
+.activities-container {
+padding: 1.5rem 1rem;
+gap: 1.5rem;
+}
+.portfolio-card {
+width: calc(50% - 0.75rem);
+height: 350px;
+}
+.portfolio-card-image {
+font-size: 1.25rem;
+}
+.portfolio-card-content {
+padding: 1.25rem;
+}
+.portfolio-card-title {
+font-size: 1.1rem;
+}
+.portfolio-card-text {
+font-size: 0.85rem;
+}
+.portfolio-card-button {
+font-size: 0.85rem;
+padding: 0.5rem 1.5rem;
+}
+.portfolio-card-button-details {
+font-size: 0.85rem;
+padding: 0.5rem 1.5rem;
+}
+}
+@media (max-width: 576px) {
+.activities-container {
+padding: 1rem 0.75rem;
+gap: 1rem;
+flex-direction: column;
+}
+.portfolio-card {
+width: 100%;
+max-width: 320px;
+height: 380px;
+}
+.portfolio-card-image {
+font-size: 1.1rem;
+}
+.portfolio-card-content {
+padding: 1rem;
+}
+.portfolio-card-title {
+font-size: 1rem;
+}
+.portfolio-card-text {
+font-size: 0.8rem;
+}
+.portfolio-card-button {
+font-size: 0.8rem;
+padding: 0.5rem 1.25rem;
+}
+.portfolio-card-button-details {
+font-size: 0.8rem;
+padding: 0.5rem 1.25rem;
+}
+}
+@media (max-width: 360px) {
+.portfolio-card {
+max-width: 280px;
+height: 360px;
+}
+.portfolio-card-image {
+font-size: 1rem;
+}
+.portfolio-card-content {
+padding: 0.875rem;
+}
+.portfolio-card-title {
+font-size: 0.95rem;
+}
+.portfolio-card-text {
+font-size: 0.75rem;
+}
+.portfolio-card-button {
+font-size: 0.75rem;
+padding: 0.45rem 1rem;
+}
+.portfolio-card-button-details {
+font-size: 0.75rem;
+padding: 0.45rem 1rem;
+}
+}
