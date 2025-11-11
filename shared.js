@@ -1,6 +1,14 @@
 (function() {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'light') {
+    document.documentElement.style.setProperty('--theme-applied', 'true');
+    document.body.classList.add('light-theme');
+  }
+})();
+
+(function() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
     document.documentElement.classList.add('theme-loaded');
     document.body.classList.add('light-theme');
   }
