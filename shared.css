@@ -53,8 +53,16 @@ body.portfolio-activities-page {
 /* NAVBAR */
 .navbar { 
   background-color: #000 !important; 
-  position: relative; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1030; 
+}
+
+body {
+  padding-top: 56px;
 }
 
 .navbar .nav-link {
@@ -227,6 +235,48 @@ body.portfolio-activities-page {
 
 .dropdown-menu[aria-labelledby="settingsDropdown"] { 
   position: absolute; 
+}
+
+/* CUSTOM SCROLLBAR */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 2px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d2d2d2;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff #000000;
+}
+
+body.light-theme ::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+body.light-theme ::-webkit-scrollbar-thumb {
+  background: #000000;
+  border: 2px solid #ffffff;
+}
+
+body.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: #25283B;
+}
+
+body.light-theme * {
+  scrollbar-color: #000000 #ffffff;
 }
 
 /* PORTFOLIO FLYOUT */
@@ -721,3 +771,4 @@ body.light-theme .dropdown-item-simple:focus {
     margin-right: 0.5rem; 
   }
 }
+
