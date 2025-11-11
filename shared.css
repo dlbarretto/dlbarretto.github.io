@@ -29,6 +29,52 @@ overflow-y: auto !important;
 height: auto !important;
 min-height: 100vh;
 }
+body.portfolio-activities-page {
+overflow-y: auto !important;
+height: auto !important;
+min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 12px; 
+}
+
+::-webkit-scrollbar-track {
+  background: #000000; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff; 
+  border-radius: 10px;
+  border: 2px solid #000000; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d2d2d2; 
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff #000000; 
+}
+
+body.light-theme ::-webkit-scrollbar-track {
+  background: #ffffff; 
+}
+
+body.light-theme ::-webkit-scrollbar-thumb {
+  background: #000000; 
+  border: 2px solid #ffffff;
+}
+
+body.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: #25283B; 
+}
+
+body.light-theme * {
+  scrollbar-color: #000000 #ffffff; 
+}
 .navbar { background-color: #000 !important; position: relative; z-index: 1030; }
 .navbar .nav-link {
 font-family: 'Roboto', system-ui, -apple-system, Segoe UI, Arial, sans-serif;
