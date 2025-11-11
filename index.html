@@ -1,186 +1,248 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Dan Lawrence Barretto</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css">
-<script>
-(function() {
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'light') {
-document.documentElement.style.setProperty('--theme-applied', 'true');
-document.body.classList.add('light-theme');
-}
-})();
-</script>
-<style>
-.banner{
-width: 100%;
-height: 100vh;
-text-align: center;
-overflow: hidden;
-position: relative;
-}
-.banner .slider{
-position: absolute;
-width: 200px;
-height: 250px;
-top: 10%;
-left: calc(50% - 100px);
-transform-style: preserve-3d;
-transform: perspective(1000px);
-animation: autoRun 20s linear infinite;
-z-index: 2;
-}
-@keyframes autoRun{
-from{ transform: perspective(1000px) rotateX(-16deg) rotateY(0deg); }
-to{ transform: perspective(1000px) rotateX(-16deg) rotateY(360deg); }
-}
-.banner .slider .item{
-position: absolute;
-inset: 0 0 0 0;
-transform: rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(550px);
-}
-.banner .slider .item img{ width: 100%; height: 100%; object-fit: cover; }
-.banner .content{
-position: absolute;
-bottom: 0;
-left: 50%;
-transform: translateX(-50%);
-width: min(1400px, 100vw);
-height: max-content;
-padding-bottom: 100px;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
-z-index: 1;
-}
-.banner .content h1{
-font-family: 'ICA Rubrik';
-font-size: clamp(2.5em, 8vw, 7.5em);
-line-height: 1em;
-color: #25283B;
-position: relative;
-text-align: center;
-width: 100%;
-white-space: nowrap;
-overflow: visible;
-}
-.banner .content h1::after{
-position: absolute;
-inset: 0 0 0 0;
-content: attr(data-content);
-z-index: 2;
--webkit-text-stroke: 2px #d2d2d2;
-color: transparent;
-white-space: nowrap;
-overflow: visible;
-}
-.banner .content .model{
-background-image: url("Assets/model1.png");
-width: 100%;
-height: 75vh;
-position: absolute;
-bottom: 0;
-left: 0;
-background-size: auto 130%;
-background-repeat: no-repeat;
-background-position: top center;
-z-index: 1;
-}
-@media screen and (max-width: 1023px) {
-.banner .slider{ width: 160px; height: 200px; left: calc(50% - 80px); }
-.banner .slider .item{ transform: rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(300px); }
-.banner .content h1{ text-shadow: 0 10px 20px #000; font-size: clamp(2.5em, 7vw, 5.5em); }
-}
-@media screen and (max-width: 767px) {
-.banner .slider{ width: 100px; height: 150px; left: calc(50% - 50px); }
-.banner .slider .item{ transform: rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(180px); }
-.banner .content h1{ font-size: clamp(2em, 8vw, 4em); bottom: 50px; position: relative; }
-.banner .content{
-padding-bottom: 80px;
-}
-}
-@media screen and (max-width: 576px) {
-.banner .content h1{ bottom: 60px; }
-.banner .content{
-padding-bottom: 70px;
-}
-}
-@media screen and (max-width: 360px) {
-.banner .content h1{ bottom: 70px; }
-.banner .content{
-padding-bottom: 60px;
-}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dan Lawrence Barretto</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        document.documentElement.style.setProperty('--theme-applied', 'true');
+        document.body.classList.add('light-theme');
+      }
+    })();
+  </script>
+  
+  <style>
+    .banner {
+      width: 100%;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .banner .slider {
+      position: absolute;
+      width: 200px;
+      height: 250px;
+      top: 10%;
+      left: calc(50% - 100px);
+      transform-style: preserve-3d;
+      transform: perspective(1000px);
+      animation: autoRun 20s linear infinite;
+      z-index: 2;
+    }
+    
+    @keyframes autoRun {
+      from { transform: perspective(1000px) rotateX(-16deg) rotateY(0deg); }
+      to { transform: perspective(1000px) rotateX(-16deg) rotateY(360deg); }
+    }
+    
+    .banner .slider .item {
+      position: absolute;
+      inset: 0 0 0 0;
+      transform: rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(550px);
+    }
+    
+    .banner .slider .item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .banner .content {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1400px, 100vw);
+      height: max-content;
+      padding-bottom: 100px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+    
+    .banner .content h1 {
+      font-family: 'ICA Rubrik';
+      font-size: clamp(2.5em, 8vw, 7.5em);
+      line-height: 1em;
+      color: #25283B;
+      position: relative;
+      text-align: center;
+      width: 100%;
+      white-space: nowrap;
+      overflow: visible;
+    }
+    
+    .banner .content h1::after {
+      position: absolute;
+      inset: 0 0 0 0;
+      content: attr(data-content);
+      z-index: 2;
+      -webkit-text-stroke: 2px #d2d2d2;
+      color: transparent;
+      white-space: nowrap;
+      overflow: visible;
+    }
+    
+    .banner .content .model {
+      background-image: url("Assets/model1.png");
+      width: 100%;
+      height: 75vh;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-size: auto 130%;
+      background-repeat: no-repeat;
+      background-position: top center;
+      z-index: 1;
+    }
+    
+    @media screen and (max-width: 1023px) {
+      .banner .slider {
+        width: 160px;
+        height: 200px;
+        left: calc(50% - 80px);
+      }
+      
+      .banner .slider .item {
+        transform: rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(300px);
+      }
+      
+      .banner .content h1 {
+        text-shadow: 0 10px 20px #000;
+        font-size: clamp(2.5em, 7vw, 5.5em);
+      }
+    }
+    
+    @media screen and (max-width: 767px) {
+      .banner .slider {
+        width: 100px;
+        height: 150px;
+        left: calc(50% - 50px);
+      }
+      
+      .banner .slider .item {
+        transform: rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(180px);
+      }
+      
+      .banner .content h1 {
+        font-size: clamp(2em, 8vw, 4em);
+        bottom: 50px;
+        position: relative;
+      }
+      
+      .banner .content {
+        padding-bottom: 80px;
+      }
+    }
+    
+    @media screen and (max-width: 576px) {
+      .banner .content h1 {
+        bottom: 60px;
+      }
+      
+      .banner .content {
+        padding-bottom: 70px;
+      }
+    }
+    
+    @media screen and (max-width: 360px) {
+      .banner .content h1 {
+        bottom: 70px;
+      }
+      
+      .banner .content {
+        padding-bottom: 60px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<nav class="navbar navbar-dark py-2">
-<div class="container-fluid px-3 d-flex align-items-center">
-<div class="nav-actions">
-<ul class="navbar-nav flex-row flex-nowrap align-items-center m-0 nav-gap-sm nav-gap-md nav-gap-lg nav-gap-xl nav-gap-xxl nav-gap-xxxl nav-gap-4k nav-gap-5k nav-gap-6k">
-<li class="nav-item"><a class="nav-link nav-link-sm nav-link-md nav-link-lg nav-link-xl nav-link-xxl nav-link-xxxl nav-link-4k nav-link-5k" href="javascript:void(0)">About</a></li>
-<li class="nav-item">
-<a id="portfolioTrigger" class="nav-link nav-link-sm nav-link-md nav-link-lg nav-link-xl nav-link-xxl nav-link-xxxl nav-link-4k nav-link-5k" href="javascript:void(0)" aria-expanded="false">Portfolio</a>
-</li>
-<li class="nav-item"><a class="nav-link nav-link-sm nav-link-md nav-link-lg nav-link-xl nav-link-xxl nav-link-xxxl nav-link-4k nav-link-5k" href="javascript:void(0)">Collaborate</a></li>
-<li class="nav-item"><a class="nav-link nav-link-sm nav-link-md nav-link-lg nav-link-xl nav-link-xxl nav-link-xxxl nav-link-4k nav-link-5k" href="javascript:void(0)">Whisper</a></li>
-</ul>
-<div class="dropdown">
-<button class="navbar-toggler" type="button" id="settingsDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Settings">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="settingsDropdown">
-<div class="dropdown-row">
-<span class="dropdown-label">Settings</span>
-</div>
-<div class="dropdown-row">
-<span class="dropdown-label">Appearance</span>
-<button class="theme-toggle" id="appearanceSwitch" aria-label="Toggle dark/light mode"></button>
-</div>
-</div>
-</div>
-<div id="portfolioFlyout" class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="portfolioTrigger" role="menu">
-<div class="dropdown-row">
-<span class="dropdown-label">Portfolio</span>
-</div>
-<div class="dropdown-row">
-<a href="portfolioactivities_content.html" class="dropdown-item-simple" style="text-decoration: none; display: block;">Activities</a>
-</div>
-<div class="dropdown-row">
-<span class="dropdown-item-simple">Project</span>
-</div>
-<div class="dropdown-row">
-<span class="dropdown-item-simple">Blog</span>
-</div>
-</div>
-</div>
-</div>
-</nav>
-<div class="banner">
-<div class="slider" style="--quantity: 10">
-<div class="item" style="--position: 1"><img src="Assets/bgport1.png" alt=""></div>
-<div class="item" style="--position: 2"><img src="Assets/bgport2.png" alt=""></div>
-<div class="item" style="--position: 3"><img src="Assets/bgport3.png" alt=""></div>
-<div class="item" style="--position: 4"><img src="Assets/bgport4.png" alt=""></div>
-<div class="item" style="--position: 5"><img src="Assets/bgport5.png" alt=""></div>
-<div class="item" style="--position: 6"><img src="Assets/bgport6.png" alt=""></div>
-<div class="item" style="--position: 7"><img src="Assets/bgport7.png" alt=""></div>
-<div class="item" style="--position: 8"><img src="Assets/bgport8.png" alt=""></div>
-<div class="item" style="--position: 9"><img src="Assets/bgport9.png" alt=""></div>
-<div class="item" style="--position: 10"><img src="Assets/bgport10.png" alt=""></div>
-</div>
-<div class="content">
-<h1 data-content="Dan Lawrence Barretto">Dan Lawrence Barretto</h1>
-<div class="model"></div>
-</div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="shared.js"></script>
+  <nav class="navbar navbar-dark py-2">
+    <div class="container-fluid px-3 d-flex align-items-center">
+      <div class="nav-actions">
+        <ul class="navbar-nav flex-row flex-nowrap align-items-center m-0 nav-gap-sm nav-gap-md nav-gap-lg nav-gap-xl nav-gap-xxl nav-gap-xxxl nav-gap-4k nav-gap-5k nav-gap-6k">
+          <li class="nav-item">
+            <a class="nav-link nav-link-sm nav-link-md nav-link-lg nav-link-xl nav-link-xxl nav-link-xxxl nav-link-4k nav-link-5k" href="javascript:void(0)">About</a>
+          </li>
+          <li class="nav-item">
+            <a id="portfolioTrigger" class="nav-link nav-link-sm nav-link-md nav-link-lg nav-link-xl nav-link-xxl nav-link-xxxl nav-link-4k nav-link-5k" href="javascript:void(0)" aria-expanded="false">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-sm nav-link-md nav-link-lg nav-link-xl nav-link-xxl nav-link-xxxl nav-link-4k nav-link-5k" href="javascript:void(0)">Collaborate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-sm nav-link-md nav-link-lg nav-link-xl nav-link-xxl nav-link-xxxl nav-link-4k nav-link-5k" href="javascript:void(0)">Whisper</a>
+          </li>
+        </ul>
+        
+        <div class="dropdown">
+          <button class="navbar-toggler" type="button" id="settingsDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Settings">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="settingsDropdown">
+            <div class="dropdown-row">
+              <span class="dropdown-label">Settings</span>
+            </div>
+            <div class="dropdown-row">
+              <span class="dropdown-label">Appearance</span>
+              <button class="theme-toggle" id="appearanceSwitch" aria-label="Toggle dark/light mode"></button>
+            </div>
+          </div>
+        </div>
+        
+        <div id="portfolioFlyout" class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="portfolioTrigger" role="menu">
+          <div class="dropdown-row">
+            <span class="dropdown-label">Portfolio</span>
+          </div>
+          <div class="dropdown-row">
+            <a href="portfolioactivities_content.html" class="dropdown-item-simple" style="text-decoration: none; display: block;">Activities</a>
+          </div>
+          <div class="dropdown-row">
+            <span class="dropdown-item-simple">Project</span>
+          </div>
+          <div class="dropdown-row">
+            <span class="dropdown-item-simple">Blog</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="banner">
+    <div class="slider" style="--quantity: 10">
+      <div class="item" style="--position: 1"><img src="Assets/bgport1.png" alt=""></div>
+      <div class="item" style="--position: 2"><img src="Assets/bgport2.png" alt=""></div>
+      <div class="item" style="--position: 3"><img src="Assets/bgport3.png" alt=""></div>
+      <div class="item" style="--position: 4"><img src="Assets/bgport4.png" alt=""></div>
+      <div class="item" style="--position: 5"><img src="Assets/bgport5.png" alt=""></div>
+      <div class="item" style="--position: 6"><img src="Assets/bgport6.png" alt=""></div>
+      <div class="item" style="--position: 7"><img src="Assets/bgport7.png" alt=""></div>
+      <div class="item" style="--position: 8"><img src="Assets/bgport8.png" alt=""></div>
+      <div class="item" style="--position: 9"><img src="Assets/bgport9.png" alt=""></div>
+      <div class="item" style="--position: 10"><img src="Assets/bgport10.png" alt=""></div>
+    </div>
+    
+    <div class="content">
+      <h1 data-content="Dan Lawrence Barretto">Dan Lawrence Barretto</h1>
+      <div class="model"></div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="shared.js"></script>
 </body>
 </html>
