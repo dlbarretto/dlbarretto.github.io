@@ -203,16 +203,4 @@ padding: 0.45rem 1rem;
 font-size: 0.75rem;
 padding: 0.45rem 1rem;
 }
-@media (max-width: 576px) {
-  html, body {
-    height: 100%;
-    overflow: hidden; 
-  }
-
-  .activities-container {
-    max-height: 100vh;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch; 
-  }
-}
 }
