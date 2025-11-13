@@ -19,8 +19,22 @@
           <li class="nav-item">
             <a class="nav-link nav-link-sm nav-link-md nav-link-lg nav-link-xl nav-link-xxl nav-link-xxxl nav-link-4k nav-link-5k" href="index.html">About</a>
           </li>
-          <li class="nav-item">
-            <a id="portfolioTrigger" class="nav-link nav-link-sm nav-link-md nav-link-lg nav-link-xl nav-link-xxl nav-link-xxxl nav-link-4k nav-link-5k" href="javascript:void(0)" aria-expanded="false">Portfolio</a>
+          <li class="nav-item dropdown">
+            <a id="portfolioTrigger" class="nav-link nav-link-sm nav-link-md nav-link-lg nav-link-xl nav-link-xxl nav-link-xxxl nav-link-4k nav-link-5k" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
+            <div id="portfolioFlyout" class="dropdown-menu dropdown-menu-dark" aria-labelledby="portfolioTrigger">
+              <div class="dropdown-row">
+                <span class="dropdown-label">Portfolio</span>
+              </div>
+              <div class="dropdown-row">
+                <a href="portfolioactivities_content.html" class="dropdown-item-simple" style="text-decoration: none; display: block;">Activities</a>
+              </div>
+              <div class="dropdown-row">
+                <span class="dropdown-item-simple">Project</span>
+              </div>
+              <div class="dropdown-row">
+                <span class="dropdown-item-simple">Blog</span>
+              </div>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link nav-link-sm nav-link-md nav-link-lg nav-link-xl nav-link-xxl nav-link-xxxl nav-link-4k nav-link-5k" href="javascript:void(0)">Collaborate</a>
@@ -43,21 +57,6 @@
               <span class="dropdown-label">Appearance</span>
               <button class="theme-toggle" id="appearanceSwitch" aria-label="Toggle dark/light mode"></button>
             </div>
-          </div>
-        </div>
-
-        <div id="portfolioFlyout" class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="portfolioTrigger" role="menu">
-          <div class="dropdown-row">
-            <span class="dropdown-label">Portfolio</span>
-          </div>
-          <div class="dropdown-row">
-            <a href="portfolioactivities_content.html" class="dropdown-item-simple" style="text-decoration: none; display: block;">Activities</a>
-          </div>
-          <div class="dropdown-row">
-            <span class="dropdown-item-simple">Project</span>
-          </div>
-          <div class="dropdown-row">
-            <span class="dropdown-item-simple">Blog</span>
           </div>
         </div>
       </div>

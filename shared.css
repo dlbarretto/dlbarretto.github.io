@@ -283,22 +283,7 @@ body.light-theme * {
 #portfolioFlyout.dropdown-menu {
   position: absolute;
   margin: 0;
-  display: block;
-  visibility: hidden;
-  opacity: 0;
-  transform: translateY(-6px);
-  transition: opacity .15s ease, transform .15s ease, visibility 0s linear .15s;
-  top: 0;
-  left: 0;
-  z-index: 1055;
   min-width: 180px;
-}
-
-#portfolioFlyout.show {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0s;
 }
 
 #portfolioFlyout .dropdown-item-simple {
@@ -600,21 +585,12 @@ body.light-theme .dropdown-item-simple:focus {
   }
 
   .dropdown-menu[aria-labelledby="settingsDropdown"] {
-    position: fixed !important;
+    position: absolute !important;
     min-width: clamp(140px, 20vw, 180px);
-    top: auto !important;
-    left: auto !important;
-    right: 1rem !important;
-    bottom: auto !important;
-    transform: none !important;
-  }
-
-  .dropdown-menu[aria-labelledby="settingsDropdown"].show {
-    position: fixed !important;
   }
 
   #portfolioFlyout.dropdown-menu { 
-    position: fixed !important; 
+    position: absolute !important; 
     min-width: clamp(140px, 20vw, 180px); 
   }
 
@@ -653,7 +629,6 @@ body.light-theme .dropdown-item-simple:focus {
 
   .dropdown-menu[aria-labelledby="settingsDropdown"] { 
     min-width: clamp(120px, 18vw, 160px); 
-    right: 0.5rem !important; 
   }
 
   #portfolioFlyout.dropdown-menu { 
@@ -686,7 +661,6 @@ body.light-theme .dropdown-item-simple:focus {
 
   .dropdown-menu[aria-labelledby="settingsDropdown"] { 
     min-width: clamp(110px, 16vw, 140px); 
-    right: 0.25rem !important; 
   }
 
   #portfolioFlyout.dropdown-menu { 
@@ -729,7 +703,6 @@ body.light-theme .dropdown-item-simple:focus {
 
   .dropdown-menu[aria-labelledby="settingsDropdown"] { 
     min-width: clamp(100px, 15vw, 130px); 
-    right: 0.2rem !important; 
   }
 
   #portfolioFlyout.dropdown-menu { 
@@ -771,4 +744,3 @@ body.light-theme .dropdown-item-simple:focus {
     margin-right: 0.5rem; 
   }
 }
-
